@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: whitesmoke;
+    text-align: center;
+    font-family: 'Lexend Zetta', sans-serif;
+}
+
+h1 {
+    color: #07031a;
+    font-size: 4rem;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    color: #07031a;
+    font-size: 2rem;
+    position: absolute;
+}
+
+.canvas {
+    background-color: #07031a;
+    border: 2px solid green;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.highscore {
+    bottom: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+
+.score {
+    color: #07031a;
+    font-size: 3rem;
+    left: 50%;
+    top: 18%;
+    transform: translate(-50%, -50%);
+}
