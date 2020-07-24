@@ -47,3 +47,98 @@ h2 {
     top: 18%;
     transform: translate(-50%, -50%);
 }
+
+.controls {
+    display: none;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 750px) {
+
+    h1 {
+        font-size: 2.5rem;
+        top: 3%;
+    }
+
+    .canvas {
+        width: 95%;
+    }
+
+    .score {
+        font-size: 2rem;
+        top: 10%;
+    }
+
+    .highscore {
+        font-size: 1rem;
+        width: 90%;
+        margin: 10px auto;
+        bottom: 80%;
+    }
+
+    .controls {
+        bottom: 1%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        display: inline-block;
+        position: absolute;
+        width: 20vh;
+        height: 20vh;
+    }
+
+    .controls .btn {
+        height: 31%;
+        width: 31%;
+        position: absolute;
+        /* border: 2px solid black; */
+    }
+
+    .controls .up {
+        top: 0%;
+        left: 33%;
+    }
+
+    .controls .down {
+        bottom: 0%;
+        left: 33%;
+    }
+
+    .controls .left {
+        top: 33%;
+        left: 0%;
+    }
+
+    .controls .right {
+        top: 33%;
+        right: 0%;
+    }
+
+    .arrow {
+        position: absolute;
+        height: 60%;
+        width: 60%;
+        top: 10%;
+        left: 10%;
+        display: inline-block;
+        border: solid #07031a;
+        border-width: 0.5rem 0.5rem 0 0;
+    }
+
+    .up .arrow {
+        transform: rotate(-45deg);
+    }
+
+    .down .arrow {
+        transform: rotate(135deg);
+    }
+
+    .left .arrow {
+        transform: rotate(-135deg);
+    }
+
+    .right .arrow {
+        transform: rotate(45deg);
+    }
+
+}

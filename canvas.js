@@ -5,12 +5,22 @@ const scale = 20;
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 
+// Controls for mobile
+
+let movingUp = false; let movingDown = false; let movingLeft = false; let movingRight = false;
+
+const upMove = document.querySelector(".up .arrow");
+const downMove = document.querySelector(".down");
+const leftMove = document.querySelector(".left");
+const rightMove = document.querySelector(".right");
 
 // Score board
 
 let highscore = document.querySelector(".highscore");
 let score = document.querySelector(".score");
 let hs = 0;
+
+// Game 
 
 function Snake() {
     this.x = scale * 4;
@@ -64,16 +74,16 @@ function Snake() {
     }
 
     this.changeDirection = function (event) {
-        if (event.key === "ArrowDown" && snake.yv !== -scale) {
+        if ((event.key === "ArrowDown" || movingDown) && snake.yv !== -scale) {
             snake.xv = 0;
             snake.yv = scale;
-        } else if (event.key === "ArrowUp" && snake.yv !== scale) {
+        } else if ((event.key === "ArrowUp" || movingUp) && snake.yv !== scale) {
             snake.xv = 0;
             snake.yv = -scale;
-        } else if (event.key === "ArrowRight" && snake.xv !== -scale) {
+        } else if ((event.key === "ArrowRight" || movingRight) && snake.xv !== -scale) {
             snake.xv = scale;
             snake.yv = 0;
-        } else if (event.key === "ArrowLeft" && snake.xv !== scale) {
+        } else if ((event.key === "ArrowLeft" || movingLeft) && snake.xv !== scale) {
             snake.xv = -scale;
             snake.yv = 0;
         }
@@ -150,13 +160,47 @@ let food;
         }
 
 
-    }, 250);
+    }, 150);
 
 
 }());
 
+// Controls for PC
 
 window.addEventListener("keydown", function (event) {
     snake.changeDirection(event);
 });
 
+// Controls for mobile
+
+window.addEventListener("mousedown", function (event) {
+    upMove.addEventListener("mousedown", function () {
+        movingUp = true; movingDown = false; movingLeft = false; movingRight = false;
+    });
+    downMove.addEventListener("mousedown", function () {
+        movingUp = false; movingDown = true; movingLeft = false; movingRight = false;
+    });
+    leftMove.addEventListener("mousedown", function () {
+        movingUp = false; movingDown = false; movingLeft = true; movingRight = false;
+    });
+    rightMove.addEventListener("mousedown", function () {
+        movingUp = false; movingDown = false; movingLeft = false; movingRight = true;
+    });
+    snake.changeDirection(event);
+});
+
+window.addEventListener("mouseup", function (event) {
+    upMove.addEventListener("mouseup", function () {
+        movingUp = false; movingDown = false; movingLeft = false; movingRight = false;
+    });
+    downMove.addEventListener("mouseup", function () {
+        movingUp = false; movingDown = false; movingLeft = false; movingRight = false;
+    });
+    leftMove.addEventListener("mouseup", function () {
+        movingUp = false; movingDown = false; movingLeft = false; movingRight = false;
+    });
+    rightMove.addEventListener("mouseup", function () {
+        movingUp = false; movingDown = false; movingLeft = false; movingRight = false;
+    });
+    snake.changeDirection(event);
+})
