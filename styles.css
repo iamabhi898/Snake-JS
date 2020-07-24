@@ -62,7 +62,7 @@ h2 {
     }
 
     .canvas {
-        width: 95%;
+        width: 80%;
     }
 
     .score {
@@ -83,8 +83,8 @@ h2 {
         transform: translate(-50%, 0%);
         display: inline-block;
         position: absolute;
-        width: 20vh;
-        height: 20vh;
+        width: 18vh;
+        height: 18vh;
     }
 
     .controls .btn {
